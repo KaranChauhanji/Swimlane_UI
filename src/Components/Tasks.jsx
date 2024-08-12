@@ -41,15 +41,16 @@ const Tasks = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Task: ",task)
     dispatch(addTodo(task));
     onClose();
   };
   const { todos } = useSelector((state) => state);
 
   useEffect(() => {
-    const todoInGoing = todos.filter((todo) => todo.todo);
+    const todoInGoing = todos.filter((todo) => todo.todo && !todo.status);
     const todoInProgress = todos.filter((todo) => !todo.status && !todo.todo);
-    const todoCompleted = todos.filter((todo) => todo.status);
+    const todoCompleted = todos.filter((todo) => todo.status );
     setFilterTodo({
       todoGoing: todoInGoing,
       inProgress: todoInProgress,

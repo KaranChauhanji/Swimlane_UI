@@ -19,7 +19,7 @@ function TodoState({ data }) {
             </Box>
           ))
         ) : (
-          <Text>No Todos</Text>
+          <Text color={"white"}>No Todos</Text>
         )}
       </SimpleGrid>
   );
