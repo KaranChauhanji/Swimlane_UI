@@ -14,8 +14,8 @@ Task Master is a dynamic task management website that allows users to add tasks 
 ## Tech Stack
 
 - **Frontend:** ReactJs, Redux
-- **UI Library:** [Choose the UI library you used, e.g., Chakra UI, Material-UI]
-- **Backend:** Mocked backend
+- **UI Library:** Chakra UI
+- **Backend:** Local Storage
 
 ## Getting Started
 
