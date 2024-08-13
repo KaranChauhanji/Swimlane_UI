@@ -15,7 +15,6 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import Block from "./Block";
 import { LuPlusCircle } from "react-icons/lu";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,7 +40,7 @@ const Tasks = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Task: ",task)
+    console.log("Task: ", task);
     dispatch(addTodo(task));
     onClose();
   };
@@ -50,7 +49,7 @@ const Tasks = () => {
   useEffect(() => {
     const todoInGoing = todos.filter((todo) => todo.todo && !todo.status);
     const todoInProgress = todos.filter((todo) => !todo.status && !todo.todo);
-    const todoCompleted = todos.filter((todo) => todo.status );
+    const todoCompleted = todos.filter((todo) => todo.status);
     setFilterTodo({
       todoGoing: todoInGoing,
       inProgress: todoInProgress,
@@ -62,9 +61,10 @@ const Tasks = () => {
     <Box
       color={"#C7C7C7"}
       bgColor={"#212121"}
-      minH={"100vh"}
-      p={['5px','5px','10px',"40px"]}
-      borderLeft={"2px solid grey"}
+      minH={["100vh",'100vh','100vh', 'auto']}
+      maxH={['auto','auto','auto','100vh']}
+      p={["5px", "5px", "10px", "40px"]}
+      borderLeft={['none','none','none',"2px solid grey"]}
     >
       <Flex p={"14px"} justifyContent={"space-between"} alignItems={"center"}>
         <Heading color={"white"} fontFamily={'"Nunito", sans-serif'}>
@@ -132,8 +132,8 @@ const Tasks = () => {
       </Flex>
 
       <SimpleGrid
-        gridTemplateColumns={['1fr','1fr','1fr',"repeat(3,1fr)"]}
-        spacing={"16px"}
+        gridTemplateColumns={["1fr", "1fr", "1fr", "repeat(3,1fr)"]}
+        spacing={['5px','5px','10px',"16px"]}
         p={"20px"}
         h={"90%"}
       >
@@ -141,8 +141,6 @@ const Tasks = () => {
         <InProgress data={filterTodo.inProgress} />
         <CompletedTodos data={filterTodo.completed} />
       </SimpleGrid>
-
-      <SimpleGrid gridTemplateColumns={"3,1fr"}></SimpleGrid>
     </Box>
   );
 };

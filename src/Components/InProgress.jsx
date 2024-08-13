@@ -8,6 +8,8 @@ function InProgress({ data }) {
       p={"20px"}
       overflowY={"auto"}
       alignContent={"start"}
+      maxH={['auto','auto','auto','80%']}
+
     >
       <Text  mb={"20px"}>In Progress</Text>
       {data.length ? (
