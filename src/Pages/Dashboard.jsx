@@ -6,12 +6,12 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 const Dashboard = () => {
   return (
-    <Box>
+    <Box bgColor={"#181818"} minH={'100vh'}>
       <SimpleGrid
-        gridTemplateColumns={"1fr 5fr"}
-        bgColor={"#181818"}
+      display={['block','block','block','grid']}
+        gridTemplateColumns={["1fr 5fr"]}
         minH={"100vh"}
-        spacing={"40px"}
+        spacing={['1px','1px','1px',"40px"]}
       >
         <Filters />
         <DndProvider backend={HTML5Backend}>

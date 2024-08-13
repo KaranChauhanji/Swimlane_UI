@@ -62,8 +62,8 @@ const Tasks = () => {
     <Box
       color={"#C7C7C7"}
       bgColor={"#212121"}
-      maxH={"100vh"}
-      p={"40px"}
+      minH={"100vh"}
+      p={['5px','5px','10px',"40px"]}
       borderLeft={"2px solid grey"}
     >
       <Flex p={"14px"} justifyContent={"space-between"} alignItems={"center"}>
@@ -132,7 +132,7 @@ const Tasks = () => {
       </Flex>
 
       <SimpleGrid
-        gridTemplateColumns={"repeat(3,1fr)"}
+        gridTemplateColumns={['1fr','1fr','1fr',"repeat(3,1fr)"]}
         spacing={"16px"}
         p={"20px"}
         h={"90%"}
